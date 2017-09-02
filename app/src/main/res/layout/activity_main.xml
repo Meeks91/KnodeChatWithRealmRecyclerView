@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.micah.knodechat.chatActivity.view.ChatActivity">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/messageInputHolder"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/messagesRV"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/darker_gray"
+        android:gravity="center_vertical"
+        android:id="@+id/messageInputHolder"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="8dp"
+            android:minHeight="50dp"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:layout_weight="0.9"
+            android:background="@drawable/rounded_corners"
+            android:paddingStart="5dp"
+            android:paddingBottom="1dp"
+            android:id="@+id/messageET"
+            />
+
+
+    <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:text="send"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:onClick="onSendMessageClicked"
+            android:id="@+id/sendMessageButton"
+            />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

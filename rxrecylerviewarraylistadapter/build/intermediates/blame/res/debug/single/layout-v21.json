@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/Micah/Downloads/KnodeChat/rxrecylerviewarraylistadapter/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Micah/.android/build-cache/6d7b77b45f4c81541a080c3dc220a9f95752f6ee/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Micah/Downloads/KnodeChat/rxrecylerviewarraylistadapter/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/Micah/.android/build-cache/6d7b77b45f4c81541a080c3dc220a9f95752f6ee/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/Micah/Downloads/KnodeChat/rxrecylerviewarraylistadapter/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Micah/.android/build-cache/6d7b77b45f4c81541a080c3dc220a9f95752f6ee/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/Micah/Downloads/KnodeChat/rxrecylerviewarraylistadapter/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Micah/.android/build-cache/6d7b77b45f4c81541a080c3dc220a9f95752f6ee/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

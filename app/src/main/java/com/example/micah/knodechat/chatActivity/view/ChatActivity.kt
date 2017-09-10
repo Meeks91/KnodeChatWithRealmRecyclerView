@@ -1,19 +1,17 @@
 package com.example.micah.knodechat.chatActivity.view
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.example.micah.knodechat.R
 import com.example.micah.knodechat.chatActivity.ChatActivityPresenter
 import com.example.micah.knodechat.chatActivity.model.jsonAndRealmModel.ChatMessage
+import com.example.micah.knodechat.chatActivity.view.messagesRecyclerView.ChatMessagesRVAdapter
 import com.example.micah.knodechat.dagger.DaggerInjector
 import io.realm.Realm
-
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import com.example.micah.knodechat.chatActivity.view.messagesRecyclerView.ChatMessagesRVAdapter
 
 class ChatActivity : AppCompatActivity(), ChatActivityDelegate {
 

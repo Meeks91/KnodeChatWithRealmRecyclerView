@@ -1,11 +1,10 @@
 package com.example.micah.knodechat.dagger.modules
 
-import android.content.Context
+import com.example.micah.knodechat.chatActivity.ChatActivityPresenter
 import com.example.micah.knodechat.chatActivity.model.api.MessagesApiHelper
 import com.example.micah.knodechat.chatActivity.model.db.MessagesDBHelper
 import com.example.micah.knodechat.chatActivity.model.socketIO.ChatSocketHelper
 import com.example.micah.knodechat.chatActivity.view.ChatActivityDelegate
-import com.example.micah.knodechat.chatActivity.ChatActivityPresenter
 import dagger.Module
 import dagger.Provides
 
@@ -15,11 +14,11 @@ import dagger.Provides
 
 @Module (includes = arrayOf(SocketIOModule::class, DBModule::class, NetworkingModule::class))
 
-class ChatActivityModule(val mContext: Context){
+class ChatActivityModule(val mChatActivityDelegate: ChatActivityDelegate){
 
-    @Provides fun provideContext(): Context {
+    @Provides fun provideChatActivityDelegate(): ChatActivityDelegate {
 
-        return mContext
+        return mChatActivityDelegate
     }
 
     @Provides fun chatActivityPresenter(chatActivityDelegate: ChatActivityDelegate,
@@ -28,10 +27,5 @@ class ChatActivityModule(val mContext: Context){
                                                                  messagesDBHelper: MessagesDBHelper): ChatActivityPresenter {
 
         return ChatActivityPresenter(chatActivityDelegate, chatSocketHelper, messagesApiHelper, messagesDBHelper)
-    }
-
-    @Provides fun ChatActivityViewDelegate(): ChatActivityDelegate{
-
-        return mContext as ChatActivityDelegate
     }
 }

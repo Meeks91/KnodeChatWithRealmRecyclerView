@@ -7,6 +7,8 @@ import com.example.micah.knodechat.chatActivity.model.socketIO.ChatSocketHelper
 import com.example.micah.knodechat.chatActivity.view.ChatActivityDelegate
 import com.example.micah.knodechat.rxBus.RxBus
 import com.example.micah.knodechat.rxBus.RxBusNotificationType
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 
 /**
 * Created by Micah on 19/08/2017.
@@ -15,6 +17,7 @@ import com.example.micah.knodechat.rxBus.RxBusNotificationType
 class ChatActivityPresenter {
 
     private val TAG = ChatActivityPresenter::class.simpleName
+    private val mCompositeDisposable = CompositeDisposable()
     private val mChatActivityDelegate: ChatActivityDelegate
     private val mChatSocketHelper: ChatSocketHelper
     private val mMessagesApiHelper: MessagesApiHelper
@@ -60,6 +63,7 @@ class ChatActivityPresenter {
 
                 mMessagesDBHelper.saveChatMessage(it.data as ChatMessage)
         }
+        .addTo(mCompositeDisposable)
     }
 
     //MARK: ---------------------- INITIALISE SOCKET CONNECTION & MESSAGE EVENT SUBSCRIPTION
@@ -123,9 +127,9 @@ class ChatActivityPresenter {
     //MARK: ---------------------- SENDING CHAT MESSAGES
 
     /* is called by the view to send chat messages */
-    fun onSendMessage(messageET: String) {
+    fun onSendMessage(messageText: String) {
 
-        mChatSocketHelper.sendChatMessage(messageET)
+        mChatSocketHelper.sendChatMessage(messageText)
     }
 
     //MARK: ---------------------- SENDING CHAT MESSAGES

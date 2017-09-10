@@ -1,6 +1,7 @@
 package com.example.micah.knodechat.dagger
 
 import com.example.micah.knodechat.chatActivity.view.ChatActivity
+import com.example.micah.knodechat.chatActivity.view.ChatActivityDelegate
 import com.example.micah.knodechat.dagger.modules.ChatActivityModule
 
 /**
@@ -14,8 +15,8 @@ object DaggerInjector {
     /**
      * returns the appComponent configured to inject into the specified ChatActivity
      */
-    fun configureInjectionFor(chatActivity: ChatActivity): AppComonent{
+    fun configureInjectionFor(chatActivityDelegate: ChatActivityDelegate): AppComonent{
 
-        return daggerAppComponent.chatActivityModule(ChatActivityModule(chatActivity)).build()
+        return daggerAppComponent.chatActivityModule(ChatActivityModule(chatActivityDelegate)).build()
     }
 }
